@@ -14,7 +14,8 @@ public class LogBeautifier {
 			String sCurrentLine;
 
 			while ((sCurrentLine = br.readLine()) != null) {
-				System.out.println(sCurrentLine);
+				if(sCurrentLine.contains("[URL]:")){}
+					
 			}
 
 		} catch (IOException e) {
