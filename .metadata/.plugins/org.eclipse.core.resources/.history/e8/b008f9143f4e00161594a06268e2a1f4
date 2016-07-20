@@ -1,0 +1,5 @@
+package adobe.analytics.ws.logs.adapt;
+
+public class LogObj {
+
+}

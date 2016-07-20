@@ -1,0 +1,10 @@
+package adobe.analytics.ws.logs.adapt;
+
+public class LogObj {
+
+	String url;
+	String method;
+	String reqBody;
+	String response;
+
+}

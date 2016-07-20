@@ -1,0 +1,29 @@
+package adobe.analytics.ws.logs.adapt;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class LogBeautifier {
+
+	public static void main(String[] args) {
+		try (BufferedReader br = new BufferedReader(
+				new FileReader("C:/Users/vishwsin/Desktop/work/Dallas_19_Requests.log"))) {
+
+			String sCurrentLine;
+
+			while ((sCurrentLine = br.readLine()) != null) {
+				LogObj lObj = new LogObj();
+				if (sCurrentLine.contains("[URL]:")) {
+					System.out.println(sCurrentLine.split("[URL]:")[2]);
+				}
+
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
