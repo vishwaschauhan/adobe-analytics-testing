@@ -1,0 +1,29 @@
+package adobe.analytics.ws.logs.adapt;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class LogCleaner {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(
+				new FileReader("C:/Users/vishwsin/Desktop/work/logs/Dallas_19_Requests.log"));
+
+			String sCurrentLine;
+			List<String> sList = new ArrayList<String>();
+			List<LogObj> obList = new ArrayList<LogObj>();
+			
+			while ((sCurrentLine = br.readLine()) != null) {
+				if(!sCurrentLine.startsWith("---------") && (sCurrentLine.trim().length()!=0))
+				{
+					if(sCurrentLine.startsWith("url:"))
+						
+					
+				}
+			}
+	}
+	
+}

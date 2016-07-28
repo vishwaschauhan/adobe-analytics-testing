@@ -1,0 +1,54 @@
+package adobe.analytics.ws.logs.adapt;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class LogCleaner {
+
+	public static void main(String[] args) throws IOException {
+		printLog(getObjList());
+	}
+
+	private static void printLog(List<LogObj> objList) {
+		for (LogObj obj : objList) {
+
+		}
+	}
+
+	private static List<LogObj> getObjList() throws IOException {
+		BufferedReader br = new BufferedReader(
+				new FileReader("C:/Users/vishwsin/Desktop/work/logs/Dallas_19_Requests.log"));
+
+		String sCurrentLine;
+		List<LogObj> obList = new ArrayList<LogObj>();
+
+		while ((sCurrentLine = br.readLine()) != null) {
+			String tempStr = sCurrentLine;
+			while (!tempStr.startsWith("---------") && (sCurrentLine.trim().length() != 0)) {
+				LogObj log = new LogObj();
+				if (tempStr.startsWith("url:")) {
+					log.setUrl(sCurrentLine.substring(3));
+					tempStr = br.readLine();
+				}
+				if (tempStr.startsWith("method:")) {
+					log.setMethod(sCurrentLine.substring(6));
+					tempStr = br.readLine();
+				}
+				if (tempStr.startsWith("requestbody:")) {
+					log.setReqBody(sCurrentLine.substring(11));
+					tempStr = br.readLine();
+				}
+				if (tempStr.startsWith("response:")) {
+					log.setResponse(sCurrentLine.substring(8));
+					tempStr = br.readLine();
+				}
+				obList.add(log);
+			}
+		}
+		br.close();
+		return obList;
+	}
+}
