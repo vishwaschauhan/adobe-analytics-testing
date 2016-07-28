@@ -16,10 +16,7 @@ public class LogObj {
 	}
 
 	public String getMethod() {
-		if (method != null)
-			return method;
-		else
-			return "";
+		return method;
 	}
 
 	public void setMethod(String method) {
@@ -27,10 +24,7 @@ public class LogObj {
 	}
 
 	public String getReqBody() {
-		if (reqBody != null)
-			return reqBody;
-		else
-			return "";
+		return reqBody;
 	}
 
 	public void setReqBody(String reqBody) {
@@ -38,10 +32,7 @@ public class LogObj {
 	}
 
 	public String getResponse() {
-		if (response != null)
-			return response;
-		else
-			return "";
+		return response;
 	}
 
 	public void setResponse(String response) {

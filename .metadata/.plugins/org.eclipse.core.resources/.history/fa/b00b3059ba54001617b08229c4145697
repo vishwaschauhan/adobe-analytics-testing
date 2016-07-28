@@ -14,14 +14,13 @@ public class LogCleaner {
 
 	private static void printLog(List<LogObj> objList) {
 		System.out.println(objList.size());
-
-		for (LogObj obj : objList) {
-			System.out.println("url:" + obj.getUrl());
-			System.out.println("method:" + obj.getMethod());
-			System.out.println("requestbody:" + obj.getReqBody());
-			System.out.println("response:" + obj.getResponse());
-			System.out.println();
-		}
+		
+		  for (LogObj obj : objList) { System.out.println("url:" +
+		  obj.getUrl()); System.out.println("method:" + obj.getMethod());
+		  System.out.println("requestbody:" + obj.getReqBody());
+		  System.out.println("response:" + obj.getResponse());
+		  System.out.println(); }
+		 
 	}
 
 	private static List<LogObj> getObjList() throws IOException {
@@ -53,8 +52,8 @@ public class LogCleaner {
 					tempStr = br.readLine();
 				}
 			}
-			if (log != null)
-				obList.add(log);
+			if(log!=null)
+			obList.add(log);
 		}
 		br.close();
 		return obList;

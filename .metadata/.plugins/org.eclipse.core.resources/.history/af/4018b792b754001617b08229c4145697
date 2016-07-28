@@ -13,8 +13,6 @@ public class LogCleaner {
 	}
 
 	private static void printLog(List<LogObj> objList) {
-		System.out.println(objList.size());
-
 		for (LogObj obj : objList) {
 			System.out.println("url:" + obj.getUrl());
 			System.out.println("method:" + obj.getMethod());
@@ -32,29 +30,31 @@ public class LogCleaner {
 		int count = 0;
 		while ((sCurrentLine = br.readLine()) != null) {
 			String tempStr = sCurrentLine;
-			LogObj log = null;
-			while (tempStr != null && !tempStr.startsWith("---------") && (sCurrentLine.trim().length() != 0)) {
-				System.out.println(++count);
-				log = new LogObj();
+			while (!tempStr.startsWith("---------") && (sCurrentLine.trim().length() != 0)) {
+				LogObj log = new LogObj();
+				System.out.println(count++);
 				if (tempStr.startsWith("url:")) {
-					log.setUrl(tempStr.substring(4));
+					log.setUrl(sCurrentLine.substring(4));
 					tempStr = br.readLine();
+					System.out.println("url::::::::::"+count++);
 				}
 				if (tempStr.startsWith("method:")) {
-					log.setMethod(tempStr.substring(7));
+					log.setMethod(sCurrentLine.substring(7));
 					tempStr = br.readLine();
+					System.out.println("method::::::::::"+count++);
 				}
 				if (tempStr.startsWith("requestbody:")) {
-					log.setReqBody(tempStr.substring(12));
+					log.setReqBody(sCurrentLine.substring(12));
 					tempStr = br.readLine();
+					System.out.println("requestbody::::::::::"+count++);
 				}
 				if (tempStr.startsWith("response:")) {
-					log.setResponse(tempStr.substring(9));
+					log.setResponse(sCurrentLine.substring(9));
 					tempStr = br.readLine();
+					System.out.println("response::::::::::"+count++);
 				}
-			}
-			if (log != null)
 				obList.add(log);
+			}
 		}
 		br.close();
 		return obList;

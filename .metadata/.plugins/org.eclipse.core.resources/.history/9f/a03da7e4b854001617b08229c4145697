@@ -38,8 +38,8 @@ public class LogObj {
 	}
 
 	public String getResponse() {
-		if (response != null)
-			return response;
+		if (reqBody != null)
+			return reqBody;
 		else
 			return "";
 	}

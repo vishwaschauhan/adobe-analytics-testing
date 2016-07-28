@@ -22,6 +22,7 @@ public class LogCleaner {
 			System.out.println("response:" + obj.getResponse());
 			System.out.println();
 		}
+
 	}
 
 	private static List<LogObj> getObjList() throws IOException {
