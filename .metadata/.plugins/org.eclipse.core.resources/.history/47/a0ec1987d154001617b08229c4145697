@@ -19,7 +19,7 @@ public class LogCleaner {
 		Map<String,LogObj> map = new HashMap<String,LogObj>();
 		for (LogObj obj : objList) {	
 				if(obj.getReqBody().contains("\"reportID\":")){
-					String str = obj.getReqBody();
+					String str = tmpStr.getReqBody();
 					String tmpStr = str .replaceAll("[^0-9]", "");
 					System.out.println(tmpStr);
 					map.put(tmpStr, obj);

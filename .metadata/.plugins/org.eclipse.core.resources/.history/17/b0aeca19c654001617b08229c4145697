@@ -4,9 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class LogCleaner {
 
@@ -16,13 +14,12 @@ public class LogCleaner {
 
 	private static void printLog(List<LogObj> objList) {
 		System.out.println(objList.size());
-		Map<String,LogObj> map = new HashMap<String,LogObj>();
+		
 		for (LogObj obj : objList) {	
 				if(obj.getReqBody().contains("\"reportID\":")){
 					String str = obj.getReqBody();
-					String tmpStr = str .replaceAll("[^0-9]", "");
-					System.out.println(tmpStr);
-					map.put(tmpStr, obj);
+					str .replaceAll("[^0-9]", "");
+					
 			} 
 			
 			System.out.println("url:" + obj.getUrl());

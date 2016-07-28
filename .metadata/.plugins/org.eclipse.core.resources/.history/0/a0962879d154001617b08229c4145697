@@ -22,7 +22,6 @@ public class LogCleaner {
 					String str = obj.getReqBody();
 					String tmpStr = str .replaceAll("[^0-9]", "");
 					System.out.println(tmpStr);
-					map.put(tmpStr, obj);
 			} 
 			
 			System.out.println("url:" + obj.getUrl());

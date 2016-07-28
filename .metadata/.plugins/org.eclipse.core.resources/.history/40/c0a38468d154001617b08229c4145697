@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class LogCleaner {
 
@@ -22,7 +21,6 @@ public class LogCleaner {
 					String str = obj.getReqBody();
 					String tmpStr = str .replaceAll("[^0-9]", "");
 					System.out.println(tmpStr);
-					map.put(tmpStr, obj);
 			} 
 			
 			System.out.println("url:" + obj.getUrl());
