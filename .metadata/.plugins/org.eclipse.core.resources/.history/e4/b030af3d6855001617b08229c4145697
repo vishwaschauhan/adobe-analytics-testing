@@ -57,7 +57,7 @@ public class LogCleaner {
 			String tempStr = sCurrentLine;
 			LogObj log = null;
 			while (tempStr != null && !tempStr.startsWith("---------") && (sCurrentLine.trim().length() != 0)) {
-				//System.out.println(++count);
+				System.out.println(++count);
 				log = new LogObj();
 				if (tempStr.startsWith("url:")) {
 					log.setUrl(tempStr.substring(4));

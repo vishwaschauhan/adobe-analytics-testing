@@ -15,7 +15,7 @@ public class LogCleaner {
 	}
 
 	private static void printLog(List<LogObj> objList) {
-       // System.out.println(objList.size());
+        System.out.println(objList.size());
         Map<String,String> requestMap = new HashMap<String,String>();
         Map<String, LogObj> respMap  = new HashMap<String,LogObj>();
         for (LogObj obj : objList) {  

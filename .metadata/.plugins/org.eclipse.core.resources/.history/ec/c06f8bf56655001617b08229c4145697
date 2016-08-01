@@ -15,7 +15,7 @@ public class LogCleaner {
 	}
 
 	private static void printLog(List<LogObj> objList) {
-       // System.out.println(objList.size());
+        System.out.println(objList.size());
         Map<String,String> requestMap = new HashMap<String,String>();
         Map<String, LogObj> respMap  = new HashMap<String,LogObj>();
         for (LogObj obj : objList) {  
@@ -57,7 +57,7 @@ public class LogCleaner {
 			String tempStr = sCurrentLine;
 			LogObj log = null;
 			while (tempStr != null && !tempStr.startsWith("---------") && (sCurrentLine.trim().length() != 0)) {
-				//System.out.println(++count);
+				System.out.println(++count);
 				log = new LogObj();
 				if (tempStr.startsWith("url:")) {
 					log.setUrl(tempStr.substring(4));
